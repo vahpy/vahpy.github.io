@@ -597,7 +597,12 @@ section {
   display: flex;
   justify-content: center;
 }
-
+.portfolio-links label{
+  font-family: Helvetica, sans-serif;
+  display: block;
+  line-height: 25pt;
+  font-size: 12pt;
+}
 .portfolio .portfolio-wrap .portfolio-links a {
   color: #fff;
   font-size: 28px;
