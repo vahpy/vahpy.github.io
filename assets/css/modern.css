@@ -1,0 +1,742 @@
+/**
+ * Modern overrides for iPortfolio
+ * Refined palette + typography for an academic researcher.
+ * Loaded after style.css so it takes precedence.
+ */
+
+:root {
+  --m-ink: #1f2937;          /* primary text */
+  --m-ink-soft: #4b5563;     /* secondary text */
+  --m-muted: #6b7280;        /* muted text */
+  --m-line: #e5e7eb;         /* hairline borders */
+  --m-bg: #ffffff;           /* page background */
+  --m-bg-soft: #f8fafc;      /* section background */
+  --m-bg-card: #ffffff;      /* card background */
+  --m-accent: #4f46e5;       /* indigo accent */
+  --m-accent-soft: #eef2ff;  /* accent tint */
+  --m-accent-deep: #3730a3;  /* accent hover */
+  --m-sidebar: #0f172a;      /* deep slate sidebar */
+  --m-sidebar-soft: #1e293b;
+  --m-radius: 14px;
+  --m-radius-sm: 10px;
+  --m-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.06);
+  --m-shadow: 0 4px 12px rgba(15, 23, 42, 0.06), 0 2px 4px rgba(15, 23, 42, 0.04);
+  --m-shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.10);
+  --m-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*--------------------------------------------------------------
+# Base typography
+--------------------------------------------------------------*/
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: var(--m-ink);
+  background: var(--m-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.005em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Lora", Georgia, "Times New Roman", serif;
+  letter-spacing: -0.015em;
+  color: var(--m-ink);
+}
+
+a {
+  color: var(--m-accent);
+  transition: color var(--m-transition);
+}
+
+a:hover {
+  color: var(--m-accent-deep);
+}
+
+p {
+  line-height: 1.7;
+  color: var(--m-ink-soft);
+}
+
+/*--------------------------------------------------------------
+# Sidebar / Header
+--------------------------------------------------------------*/
+#header {
+  background: var(--m-sidebar);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+#header .profile img {
+  width: 128px;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+#header .profile h1 {
+  font-family: "Lora", serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+#header .profile h1 a,
+#header .profile h1 a:hover {
+  color: #f8fafc;
+}
+
+#header .profile .social-links a {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all var(--m-transition);
+}
+
+#header .profile .social-links a:hover {
+  background: var(--m-accent);
+  border-color: var(--m-accent);
+  transform: translateY(-2px);
+}
+
+/* Nav links */
+.nav-menu a,
+.nav-menu a:focus {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #cbd5e1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  letter-spacing: 0;
+}
+
+.nav-menu a i,
+.nav-menu a:focus i {
+  font-size: 20px;
+  color: #64748b;
+  transition: color var(--m-transition);
+}
+
+.nav-menu a:hover,
+.nav-menu .active,
+.nav-menu .active:focus,
+.nav-menu li:hover > a {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-menu a:hover i,
+.nav-menu .active i,
+.nav-menu .active:focus i,
+.nav-menu li:hover > a i {
+  color: var(--m-accent);
+}
+
+/*--------------------------------------------------------------
+# Mobile nav toggle
+--------------------------------------------------------------*/
+.mobile-nav-toggle {
+  background: var(--m-accent);
+  border-radius: 10px;
+  box-shadow: var(--m-shadow);
+}
+
+/*--------------------------------------------------------------
+# Back to top
+--------------------------------------------------------------*/
+.back-to-top {
+  background: var(--m-accent);
+  border-radius: 12px;
+  box-shadow: var(--m-shadow);
+}
+
+.back-to-top:hover {
+  background: var(--m-accent-deep);
+}
+
+/*--------------------------------------------------------------
+# Sections
+--------------------------------------------------------------*/
+section {
+  padding: 80px 0;
+}
+
+.section-bg {
+  background: var(--m-bg-soft);
+}
+
+.section-title {
+  padding-bottom: 36px;
+}
+
+.section-title h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--m-ink);
+  margin-bottom: 8px;
+  padding-bottom: 14px;
+}
+
+.section-title h2::after {
+  width: 36px;
+  height: 2px;
+  background: var(--m-accent);
+  border-radius: 2px;
+}
+
+.section-title p {
+  color: var(--m-muted);
+  font-size: 15px;
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .content h3 {
+  font-family: "Lora", serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--m-ink);
+}
+
+.about .content .fst-italic {
+  color: var(--m-accent);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+.about .content ul li {
+  margin-bottom: 14px;
+  font-size: 15px;
+  color: var(--m-ink-soft);
+}
+
+.about .content ul strong {
+  color: var(--m-ink);
+  font-weight: 600;
+}
+
+.about .content ul i {
+  color: var(--m-accent);
+}
+
+.about .content p:last-child {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/*--------------------------------------------------------------
+# Resume
+--------------------------------------------------------------*/
+.resume .resume-title {
+  font-family: "Lora", serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--m-ink);
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.resume .resume-item {
+  padding: 0 0 28px 24px;
+  border-left: 2px solid var(--m-line);
+}
+
+.resume .resume-item::before {
+  width: 12px;
+  height: 12px;
+  left: -7px;
+  top: 2px;
+  background: var(--m-bg);
+  border: 2px solid var(--m-accent);
+  box-shadow: 0 0 0 4px var(--m-accent-soft);
+}
+
+.resume .resume-item h4 {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: -0.005em;
+  color: var(--m-ink);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.resume .resume-item h5 {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--m-accent-soft);
+  color: var(--m-accent-deep);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.resume .resume-item p,
+.resume .resume-item ul li {
+  color: var(--m-ink-soft);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.resume .resume-item p em {
+  color: var(--m-muted);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.resume h2 a img {
+  vertical-align: middle;
+  transition: opacity var(--m-transition);
+  opacity: 0.7;
+}
+
+.resume h2 a:hover img {
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Skills
+--------------------------------------------------------------*/
+.skills .progress {
+  height: auto;
+  margin-bottom: 22px;
+}
+
+.skills .progress .skill {
+  font-family: "Inter", sans-serif;
+  text-transform: none;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--m-ink);
+  letter-spacing: 0;
+  margin-bottom: 8px;
+}
+
+.skills .progress .skill .val {
+  color: var(--m-muted);
+  font-weight: 500;
+}
+
+.skills .progress-bar-wrap {
+  background: var(--m-line);
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.skills .progress-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--m-accent), #6366f1);
+}
+
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+.portfolio #portfolio-flters {
+  background: var(--m-bg);
+  border: 1px solid var(--m-line);
+  border-radius: 999px;
+  padding: 4px;
+  box-shadow: var(--m-shadow-sm);
+}
+
+.portfolio #portfolio-flters li {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--m-ink-soft);
+  padding: 8px 18px;
+  border-radius: 999px;
+  margin-bottom: 0;
+}
+
+.portfolio #portfolio-flters li:hover {
+  color: var(--m-accent);
+}
+
+.portfolio #portfolio-flters li.filter-active {
+  color: #ffffff;
+  background: var(--m-accent);
+}
+
+.portfolio .portfolio-wrap {
+  border-radius: var(--m-radius);
+  box-shadow: var(--m-shadow-sm);
+  border: 1px solid var(--m-line);
+}
+
+.portfolio .portfolio-wrap img {
+  border-radius: var(--m-radius) var(--m-radius) 0 0;
+}
+
+.portfolio .portfolio-wrap::before {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(15, 23, 42, 0.75) 100%);
+  border-radius: var(--m-radius);
+  opacity: 0;
+}
+
+.portfolio .portfolio-wrap:hover::before {
+  opacity: 1;
+}
+
+.portfolio .portfolio-wrap .portfolio-links {
+  bottom: -50px;
+  gap: 6px;
+  padding: 0 16px;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a {
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--m-radius-sm);
+  padding: 10px 6px;
+  width: auto;
+  flex: 1;
+  transition: all var(--m-transition);
+}
+
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+  background: var(--m-accent);
+  border-color: var(--m-accent);
+  transform: translateY(-2px);
+}
+
+.portfolio .portfolio-wrap .portfolio-links a + a {
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.portfolio-links label {
+  font-family: "Inter", sans-serif;
+  font-size: 10pt;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-links {
+  bottom: 16px;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: var(--m-sidebar);
+  color: #cbd5e1;
+  padding: 24px 0;
+  font-size: 14px;
+}
+
+#footer .copyright {
+  color: #94a3b8;
+}
+
+#footer .copyright strong span {
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+#footer .credits a {
+  color: var(--m-accent);
+}
+
+/*--------------------------------------------------------------
+# GLightbox preview window
+--------------------------------------------------------------*/
+
+/* Darker, blurred backdrop */
+.goverlay {
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Rounded media frame + soft shadow */
+.glightbox-clean .gslide-media,
+.glightbox-clean .gslide-image img,
+.glightbox-clean .gslide-video {
+  border-radius: 14px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+}
+
+.glightbox-clean .gslide-video {
+  background: #000;
+  overflow: hidden;
+}
+
+/* Caption bar — frosted card under the media */
+.glightbox-clean .gslide-description {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin-top: 14px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.glightbox-clean .gdesc-inner {
+  padding: 16px 22px;
+}
+
+.glightbox-clean .gslide-title {
+  font-family: "Lora", Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+
+.glightbox-clean .gslide-desc {
+  font-family: "Inter", sans-serif;
+  font-size: 13.5px;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.glightbox-clean .gslide-desc a {
+  color: #a5b4fc;
+  font-weight: 500;
+}
+
+/* Navigation + close buttons — glassy pills */
+.glightbox-clean .gprev,
+.glightbox-clean .gnext,
+.glightbox-clean .gclose {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  transition: all var(--m-transition);
+  opacity: 0.85;
+}
+
+.glightbox-clean .gprev:hover,
+.glightbox-clean .gnext:hover,
+.glightbox-clean .gclose:hover {
+  background: var(--m-accent);
+  border-color: var(--m-accent);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.glightbox-clean .gprev path,
+.glightbox-clean .gnext path,
+.glightbox-clean .gclose path {
+  fill: #f8fafc;
+}
+
+.glightbox-clean .gprev,
+.glightbox-clean .gnext {
+  width: 44px;
+  height: 44px;
+  top: 50%;
+  margin-top: -22px;
+}
+
+.glightbox-clean .gprev {
+  left: 24px;
+}
+
+.glightbox-clean .gnext {
+  right: 24px;
+}
+
+.glightbox-clean .gclose {
+  width: 40px;
+  height: 40px;
+  top: 18px;
+  right: 18px;
+  border-radius: 50%;
+}
+
+.glightbox-clean .gclose svg {
+  width: 16px;
+}
+
+.gbtn.focused {
+  outline: 2px solid var(--m-accent);
+  outline-offset: 2px;
+}
+
+/* Loader spinner */
+.gloader {
+  border-color: rgba(255, 255, 255, 0.4);
+  border-right-color: transparent;
+}
+
+/*--------------------------------------------------------------
+# Plyr video player controls
+--------------------------------------------------------------*/
+.plyr {
+  border-radius: 14px;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+/* Control bar — frosted dark */
+.plyr--video .plyr__controls {
+  background: linear-gradient(transparent, rgba(15, 23, 42, 0.85));
+  padding: 24px 14px 12px;
+  border: none;
+}
+
+/* Big center play button */
+.plyr--video .plyr__control--overlaid {
+  background: var(--m-accent);
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  box-shadow: 0 8px 28px rgba(79, 70, 229, 0.5);
+}
+
+.plyr--video .plyr__control--overlaid:hover {
+  background: var(--m-accent-deep);
+}
+
+.plyr--video .plyr__control--overlaid svg {
+  width: 26px;
+  height: 26px;
+  fill: #fff;
+  margin-left: 3px;
+}
+
+/* Control buttons */
+.plyr__control {
+  border-radius: 8px;
+  transition: background var(--m-transition);
+}
+
+.plyr__control:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.plyr__control svg {
+  fill: #e2e8f0;
+}
+
+.plyr__control:hover svg {
+  fill: #fff;
+}
+
+/* Progress / seek bar */
+.plyr--full-ui input[type="range"] {
+  color: var(--m-accent);
+}
+
+.plyr__progress__buffer {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.plyr--video .plyr__progress__buffer {
+  color: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+.plyr__progress--played,
+.plyr__volume--display {
+  color: var(--m-accent);
+}
+
+/* Time labels */
+.plyr__time {
+  color: #cbd5e1;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+/* Volume slider thumb */
+.plyr--full-ui input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25);
+}
+
+.plyr--full-ui input[type="range"]::-moz-range-thumb {
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25);
+}
+
+/* Menu (settings / speed) */
+.plyr__menu__container {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #e2e8f0;
+  font-size: 13px;
+}
+
+.plyr__menu__container .plyr__control {
+  color: #cbd5e1;
+}
+
+.plyr__menu__container .plyr__control--forward::after {
+  border-left-color: #94a3b8;
+}
+
+.plyr__menu__container .plyr__control--back::after {
+  border-right-color: #94a3b8;
+}
+
+/* Fullscreen toggle hover */
+.plyr--fullscreen-enabled .plyr__control--fullscreen {
+  border-radius: 8px;
+}
+
+/*--------------------------------------------------------------
+# Responsive tweaks
+--------------------------------------------------------------*/
+@media (max-width: 1199px) {
+  section {
+    padding: 56px 0;
+  }
+
+  .section-title h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 24px;
+  }
+
+  .glightbox-clean .gprev {
+    left: 10px;
+  }
+
+  .glightbox-clean .gnext {
+    right: 10px;
+  }
+
+  .glightbox-clean .gclose {
+    top: 12px;
+    right: 12px;
+  }
+
+  .glightbox-clean .gslide-description {
+    margin-top: 10px;
+  }
+
+  .glightbox-clean .gdesc-inner {
+    padding: 12px 16px;
+  }
+
+  .plyr--video .plyr__control--overlaid {
+    width: 60px;
+    height: 60px;
+  }
+}
