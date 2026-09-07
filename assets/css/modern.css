@@ -188,6 +188,139 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Publication
+--------------------------------------------------------------*/
+.publlication {
+  background: var(--m-bg);
+}
+
+.publlication .pub-year-group {
+  margin-bottom: 40px;
+}
+
+.publlication .pub-year {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--m-accent);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.publlication .pub-year::after {
+  content: "";
+  flex: 0 0 42px;
+  height: 2px;
+  background: var(--m-accent-soft);
+  border-radius: 2px;
+}
+
+.pub-card {
+  display: flex;
+  gap: 20px;
+  padding: 20px 22px;
+  margin-bottom: 18px;
+  background: var(--m-bg-card);
+  border: 1px solid var(--m-line);
+  border-radius: var(--m-radius);
+  box-shadow: var(--m-shadow-sm);
+  transition: box-shadow var(--m-transition), transform var(--m-transition),
+    border-color var(--m-transition);
+}
+
+.pub-card:hover {
+  box-shadow: var(--m-shadow);
+  border-color: var(--m-accent-soft);
+  transform: translateY(-2px);
+}
+
+.pub-index {
+  flex: 0 0 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--m-radius-sm);
+  background: var(--m-accent-soft);
+  color: var(--m-accent);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.pub-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.pub-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--m-ink);
+  margin-bottom: 6px;
+}
+
+.pub-title a {
+  color: inherit;
+  transition: color var(--m-transition);
+}
+
+.pub-title a:hover {
+  color: var(--m-accent);
+}
+
+.pub-meta {
+  font-size: 13.5px;
+  color: var(--m-muted);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.pub-meta .pub-venue {
+  color: var(--m-ink-soft);
+  font-style: italic;
+}
+
+.pub-meta .pub-year-badge {
+  font-weight: 600;
+  color: var(--m-accent);
+}
+
+.pub-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--m-accent);
+  background: var(--m-accent-soft);
+  border-radius: 999px;
+  padding: 5px 14px;
+  margin: 2px 8px 2px 0;
+  transition: background var(--m-transition), color var(--m-transition);
+  text-decoration: none;
+}
+
+.pub-links a:hover {
+  background: var(--m-accent);
+  color: #fff;
+}
+
+.pub-links a i {
+  font-size: 15px;
+}
+
+@media (max-width: 575px) {
+  .pub-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
 .about .content h3 {
